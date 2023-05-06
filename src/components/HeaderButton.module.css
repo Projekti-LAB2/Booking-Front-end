@@ -1,0 +1,12 @@
+.list ul{
+    display: flex;
+    justify-content:space-around;
+    padding: 0 10rem;    
+}
+
+.list ul li{
+    padding: 0 2rem;
+    text-decoration: none;
+    list-style-type: none   ;
+
+}
