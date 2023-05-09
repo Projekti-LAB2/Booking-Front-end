@@ -12,10 +12,6 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-.container-div{
-  display: flex;
-  flex-direction: column;
-}
 
 
 .App-header {

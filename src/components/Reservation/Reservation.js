@@ -6,12 +6,11 @@ import Form from "./form";
 const Reservation =(props) =>{
 
     return(
-        <div className={classes.reservationdiv}>
-           
-            {/* <img src={photo} className={classes.photo} /> */}
-            <Form/>
-        
+         <div className={classes.reservationdiv}>
+           {/* <img src={photo} className={classes.photo} /> */}
+             <Form/>
         </div>
+    
     );
         
 };
