@@ -1,0 +1,11 @@
+.select{
+   width: 10rem;
+   color: black;    
+    position: absolute;
+   left: 40rem;
+
+}
+.select label{
+    color: white;
+    font-family: inherit;
+}
