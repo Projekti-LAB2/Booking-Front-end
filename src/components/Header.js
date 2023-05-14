@@ -4,8 +4,11 @@ import HeaderButton from "./HeaderButton";
 import photologo from '../assets/logobuses.png'
 //import Langselect from "./langselect/Langselect";
 import LanguageSelect from "./langselect/Langselect";
+import { useTranslation } from 'react-i18next';
 const Header = (props) =>{
 
+    
+        const { t } = useTranslation();
  
     return(
         <div className={classes.header}>

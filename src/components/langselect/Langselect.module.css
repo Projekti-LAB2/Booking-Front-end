@@ -1,11 +1,18 @@
 .select{
-   width: 10rem;
-   color: black;    
-    position: absolute;
-   left: 40rem;
+    font-size: 1rem;
+    font-weight: normal;
+    max-width: 100%;
+    padding: 8px 24px 8px 10px;
+    border: none;
+    background-color: white;
 
 }
-.select label{
-    color: white;
+.select option{
+    color: black;
+    font-family: inherit;
+}
+.langdiv label{
+    position: absolute;
+    top: 10px;
     font-family: inherit;
 }

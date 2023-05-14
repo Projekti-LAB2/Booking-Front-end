@@ -10,13 +10,15 @@ import alpng from '../../assets/Flag_of_Albania.png';
 import ulpng from '../../assets/Flag_of_Montenegro.svg.png';
 import trpng from '../../assets/Flag_of_Turkey.svg.png';
 import egpng from '../../assets/1200px-Flag_of_Egypt_(variant).png';
+import { useTranslation } from 'react-i18next';
 
 const TrendingDes = (props) =>{
+    const { t } = useTranslation();
     return(
         <div className={classes.containerdiv}>
             <div  className={classes.textdiv}>
-                <h2>TRENDING DESTINATIONS 2023</h2>
-                <p>Most popular choices for travelers from Kosovo</p>
+                <h2>{t('Trending')}</h2>
+                <p>{t('Most')}</p>
             </div>
             <div className={classes.photodiv}>
                 <div className={classes.prphoto}>
