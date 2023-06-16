@@ -1,6 +1,7 @@
 import React from "react";
 import classes from './HeaderButton.module.css';
 import Langselect from "./langselect/Langselect";
+import PostTicket from "./Ticket/PostTicket";
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 
 const HeaderButton = () => {
@@ -11,7 +12,8 @@ const HeaderButton = () => {
         <li><Link to="/">Home</Link></li>
         {/* <li><a href="#">Offers</a></li> */}
 <li><Link to="/offers">Offers</Link></li>
-        <li><a href="#">Tickets</a></li>
+        <li><a href="ticket">Tickets</a></li>
+        
         <Langselect/>
       </ul>
       <div>
