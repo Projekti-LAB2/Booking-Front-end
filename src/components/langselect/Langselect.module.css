@@ -1,18 +1,23 @@
-.select{
-    font-size: 1rem;
-    font-weight: normal;
-    max-width: 100%;
-    padding: 8px 24px 8px 10px;
-    border: none;
-    background-color: white;
-
-}
-.select option{
-    color: black;
-    font-family: inherit;
-}
-.langdiv label{
-    position: absolute;
-    top: 10px;
-    font-family: inherit;
-}
+.langdiv {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+    left: 22rem;
+  }
+  
+  .select {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .select option {
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .select option:hover {
+    background-color: #f1f1f1;
+  }
