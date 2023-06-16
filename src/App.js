@@ -16,11 +16,7 @@ function Home(){
   )
 }
 
-// function Offers(){
-//   return (
-//     <Link to="/offers">BO TI QIFSHA ROBT</Link>
-//   )
-// }
+
 
 function App() {
   return (
