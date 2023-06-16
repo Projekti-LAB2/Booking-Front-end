@@ -7,7 +7,8 @@ const HeaderButton = () => {
   return (
     <div className={classes.list}>
       <ul>
-        <li><a href="#">Home</a></li>
+        {/* <li><a href="#">Home</a></li> */}
+        <li><Link to="/">Home</Link></li>
         {/* <li><a href="#">Offers</a></li> */}
 <li><Link to="/offers">Offers</Link></li>
         <li><a href="#">Tickets</a></li>
