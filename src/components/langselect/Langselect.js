@@ -28,7 +28,7 @@ const { i18n } = useTranslation();
     <div className={classes.langdiv}>
     <label>Select language:</label>
     <select className={classes.select} onChange={changeLanguage}>
-      <option value="al">ALBANIA</option>
+      <option value="al">Albania</option>
       <option value="en">English</option>
       <option value="de">Deutsch</option>
     </select>
