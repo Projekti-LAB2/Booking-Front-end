@@ -5,6 +5,7 @@ import TrendingDes from './components/TrendingDes/TrendingDes';
 import React from 'react';
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import Offers from './components/Offerts/Offerts';
+import PostTicket from './components/Ticket/PostTicket';
 
 function Home(){
   return(
@@ -16,11 +17,7 @@ function Home(){
   )
 }
 
-// function Offers(){
-//   return (
-//     <Link to="/offers">BO TI QIFSHA ROBT</Link>
-//   )
-// }
+
 
 function App() {
   return (
@@ -30,6 +27,7 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/offers' element={<Offers/>}/>
           <Route path='/' element={<TrendingDes/>}/>
+          <Route path='/ticket' element={<PostTicket/>}/>
         </Routes>
 
         </Router>

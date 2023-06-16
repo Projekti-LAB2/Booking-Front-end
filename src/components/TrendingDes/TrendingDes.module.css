@@ -1,9 +1,8 @@
 .containerdiv{
-    background-color:#424949;
-    width: 97%;
-    height: 40rem;
-    margin: 50px 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    background-color:#f1f1f1;
+    width: 100%;
+    height: auto;
+    margin-top: -1.8rem;
 }
 
 .photodiv{
@@ -19,17 +18,20 @@
 }
 
 .textdiv{
-    color: white;
-    margin-left: 10px;
+    color: black;
+    margin-left: 24rem;
 }
 .textdiv h2{
+    font-size: 2rem;
     padding-top: 10px;
     font-family: inherit;
 }
 
 .textdiv p{
-    color: #CDD7D7;
+    font-size: 1.2rem;
+    color: black;
     font-family: initial;
+    margin-left: 2rem;
 }
 
 .secondphotos{
