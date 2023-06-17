@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import Offers from './components/Offerts/Offerts';
 import PostTicket from './components/Ticket/PostTicket';
 import Ticket from './components/Ticket/Ticket';
+import Footer from './components/Footer/Footer';
 
 function Home(){
   return(
@@ -14,11 +15,16 @@ function Home(){
       <Header/>
       <Reservation/>
       <TrendingDes/>
+      <Footer/>
     </div>
   )
 }
 
-
+// function Offers(){
+//   return (
+//     <Link to="/offers">BO TI QIFSHA ROBT</Link>
+//   )
+// }
 
 function App() {
   return (
