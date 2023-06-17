@@ -10,13 +10,12 @@ function Ticket() {
         fetch('https://localhost:5001/api/Ticket')
             .then(response => response.json())
             .then(data => {
+                console.log(data)
                 const flattenedTickets = flattenTickets(data);
                 setTickets(flattenedTickets);
             })
             .catch(error => console.log(error));
     }, []);
- 
-
 
     const flattenTickets = data => {
         const flattenedTickets = [];
@@ -45,86 +44,59 @@ function Ticket() {
 
         return flattenedTickets;
     };
- 
+
+        // Sorts the tickets by price from highest to lowest
+        const sortByPriceDescending = () => {
+            const sortedTickets = [...tickets];
+            sortedTickets.sort((a, b) => b.price - a.price);
+            setTickets(sortedTickets);
+        };
+
+        // Sorts the tickets by price from lowest to highest
+        const sortByPriceAscending = () => {
+            const sortedTickets = [...tickets];
+            sortedTickets.sort((a, b) => a.price - b.price);
+            setTickets(sortedTickets);
+        };
 
     return (
-        // <div>
-        //   <h2>Ticket List</h2>
-        //   <ul>
-        //     {tickets.map(ticket => (
-        //       <li key={ticket.ticketId}>
-        //         <p>Ticket ID: {ticket.ticketId}</p>
-        //         <p>Ticket Number: {ticket.ticketNumber}</p>
-        //         <p>Price: {ticket.price}</p>
-        //         <p>Start Point: {ticket.startPoint}</p>
-        //         <p>City: {ticket.city}</p>
-        //         <p>Time: {ticket.time}</p>
-        //         <p>Date: {ticket.date}</p>
-        //       </li>
-        //     ))}
-        //   </ul>
-        // </div>
         <div>
             <Header />
-            <div className="container  mt-5">
+            <div className="container mt-5">
+            <div className='sort-buttons'>
+                <button onClick={sortByPriceDescending}>Expensive Tickets</button>
+                <button onClick={sortByPriceAscending}>Cheap Tickets</button>
+            </div>
 
                 {tickets.map(ticket => (
                     <div className="row g-3">
-                        {/* <div className="col-12 col-md-6 col-lg-4">
-
-                        <div className="card">
-
-                            <div className="card-body">
-                                <h5 className="card-title"><p>Ticket ID: {ticket.ticketId}</p></h5>
-                                <p className="card-text">
-                               
-                                    <p>Ticket Number: {ticket.ticketNumber}</p>
-                                    <p>Price: {ticket.price}</p>
-                                    <p>Start Point: {ticket.startPoint}</p>
-                                    <p>City: {ticket.city}</p>
-                                    <p>Time: {ticket.time}</p>
-                                    <p>Date: {ticket.date}</p>
-                                    <br />
-                                </p>
-                                <a href="#" className="btn btn-primary">Blej tiketen</a>
-                            </div>
-                        </div>
-
-                    </div> */}
-
-
-                    
                         <div className="ticket d-flex flex-row">
                             <div className="d-flex flex-row card border-lightblue text-center">
-                                <div className="card-body ">
+                                <div className="card-body">
                                     <h5 className="card-title ticket-info">
-                                        {/* <i className="bi bi-arrow-right-circle-fill text-primary"></i> */}
                                         {ticket.startPoint}<large>&rarr;</large>{ticket.city}
                                     </h5>
                                     <h5 className="card-title ticket-info">
-                                        {/* <i className="bi bi-arrow-right-circle-fill text-primary"></i> */}
-                                       <h2> {ticket.time}<large>&rarr;</large>04:00</h2>
+                                        <h2>{ticket.time}<large>&rarr;</large>04:00</h2>
                                     </h5>
-                                    <span><h3>Nisja behet me date :{ticket.date}</h3></span>
+                                    <span><h3>Nisja behet me date: {ticket.date}</h3></span>
                                     <p className="card-text">
-                                          <span className="text-primary ticket-info ticket-price"><em>Just {ticket.price} Euro</em></span>
+                                        <span className="text-primary ticket-info ticket-price">
+                                            <em>Just {ticket.price} Euro</em>
+                                        </span>
                                     </p>
-                                   
                                     <p className="card-text">
-                                        <button>Bye now</button>
+                                        <button>Buy now</button>
                                     </p>
                                 </div>
                             </div>
                         </div>
-
-
-                      </div>
-                   
+                    </div>
                 ))}
-
             </div>
         </div>
     );
 }
 
 export default Ticket;
+

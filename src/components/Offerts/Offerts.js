@@ -5,9 +5,15 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Modal from 'react-modal';
 import './Offerts.css';
+
+
+
+
 const Offers = (props) => {
 
     const [offers, setOffers] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
+
 
     useEffect(() => {
         async function fetchData() {
@@ -53,10 +59,37 @@ const Offers = (props) => {
           console.error(error);
         }
       };
+
+
+      const sortByPriceDescending = () => {
+        const sortedOffers = [...offers];
+        sortedOffers.sort((a, b) => b.Price - a.Price);
+        setOffers(sortedOffers);
+    };
+    
+    const sortByPriceAscending = () => {
+        const sortedOffers = [...offers];
+        sortedOffers.sort((a, b) => a.Price - b.Price);
+        setOffers(sortedOffers);
+    };
+
+
     return (
         <div>
             <Header />
-            {offers.map((offer) => (
+            <div className="navbar">
+            <div className="search-bar">
+            <input  type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="Search by description"/>
+</div>
+            <div className="Sort-buttons">
+            
+            <button onClick={sortByPriceDescending}>Expensive Offers</button>
+            <button onClick={sortByPriceAscending}>Cheap Offers</button>
+            </div>
+            </div>
+            {offers.filter((offer) => offer.OfferDescription.toLowerCase().includes(searchTerm.toLowerCase()))
+
+            .map((offer) => (
                 <div key={offer.OfferId}>
                     <div className="container mt-5 mb-5">
                         <div className="d-flex justify-content-center row">
@@ -131,6 +164,8 @@ const Offers = (props) => {
                     </div>
                 </form>
             </Modal>
+
+
         </div>
     );
 

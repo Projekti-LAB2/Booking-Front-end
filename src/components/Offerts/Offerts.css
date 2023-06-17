@@ -61,3 +61,14 @@
     background-color: #0056b3;
   }
   
+
+  .navbar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .search-bar{
+    margin-right: 300px;
+  }
