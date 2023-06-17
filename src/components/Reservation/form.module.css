@@ -26,30 +26,46 @@
       background-size: cover;
     }
   }
-.form{
-    font-style:initial; 
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .formdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .form {
+    font-style: initial;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     width: 80%;
-    height: 58%;
+    height: 70%;
     display: flex;
     padding-left: 7.5rem;
     align-items: center;
     flex-direction: unset;
-    flex-wrap: wrap; 
-    color:  white;
+    flex-wrap: wrap;
+    color: white;
     font-size: 1.3rem;
     padding-block-start: 2%;
-}
-.inputDiv {
+  }
+  
+  .inputDiv {
     width: 30rem;
     height: 6rem;
     margin: 1%;
     margin-top: 0;
     display: flex;
     flex-direction: column;
-}
-.checkboxDiv {
+  }
+  
+  .checkboxDiv {
     width: 100%;
     height: 2rem;
     margin-left: 0.5%;
@@ -57,53 +73,65 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-}
-.checkboxInput {
+  }
+  
+  .checkboxInput {
     width: 1rem;
-    margin-right: 1%;
-}
-
-.inputDateDiv {
+    margin-right: 1rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .inputDateDiv {
     width: 14.1rem;
     height: 6rem;
     margin: 1%;
     display: flex;
     flex-direction: column;
-}
-.input {
+  }
+  
+  .input {
     width: 30rem;
     height: 2.5rem;
     border-radius: 20px;
+  }
   
-}
-.formLabel{
-   margin: 1%
-}
-.checkboxLabel {
+  .formLabel {
+    margin: 1%;
+  }
+  
+  .checkboxLabel {
     margin-left: -0.5%;
     margin-right: 1.5%;
-}
-
-.inputdate{
-   height: 2.5rem;
-   border-radius: 20px;
-}
-.button {
+  }
+  
+  .inputdate {
+    height: 2.5rem;
+    border-radius: 20px;
+  }
+  
+  .button {
     width: 14.5rem;
     height: 3rem;
     margin-top: 3%;
     border-radius: 20px;
     font-family: initial;
-    background-color: #00b4ffd6;
+    background-color: #333;
     color: white;
     font-size: 1.1rem;
-}
-.buttonDiv {
-    width: 30rem;
-    height: 6rem;
-    margin: 1%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-}
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    right: 17rem;
+    bottom: 3rem;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }
+  
+  .button:active {
+    background-color: #444;
+  }
+  

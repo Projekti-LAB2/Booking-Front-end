@@ -1,5 +1,4 @@
 .header{
-    /* width: 90%; */
     width: 100%;
     height: 6rem;
     background-color: #f1f1f1;
@@ -12,7 +11,7 @@
 }
 .photologo{
     width: 18rem;
-    height: 18rem;
+    height: 19.5rem;
     padding-top: 2rem;
     position:relative;
     right: 3rem;
