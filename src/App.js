@@ -6,6 +6,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import Offers from './components/Offerts/Offerts';
 import PostTicket from './components/Ticket/PostTicket';
+import PostContact from './components/ContactForm/PostContact';
 
 function Home(){
   return(
@@ -28,6 +29,7 @@ function App() {
           <Route path='/offers' element={<Offers/>}/>
           <Route path='/' element={<TrendingDes/>}/>
           <Route path='/ticket' element={<PostTicket/>}/>
+          <Route path='/contactus' element={<PostContact/>}/>
         </Routes>
 
         </Router>

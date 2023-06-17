@@ -1,0 +1,76 @@
+
+
+/* Styles for the form */
+form {
+  width: 600px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  margin-top: 2rem;
+  background-color: #f4f4f4;
+  padding: 30px; /* Increase the padding for more spacing */
+  border-radius: 15px; /* Increase the border radius */
+  border: 1px solid black;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  justify-content: left;
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 400px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  justify-content: center;
+}
+
+textarea {
+  height: 100px;
+  resize: vertical; /* Allow vertical resizing of the textarea */
+}
+
+button[type="submit"] {
+  width: 100px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  justify-content: center;
+  margin-left: 220px;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Optional: Add some spacing between elements */
+br {
+  margin-bottom: 10px;
+}
+
+.title {
+  text-align: center;
+  margin-top: 10px;
+}
+#message {   width: 400px;
+  margin-left: 20px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 100px;
+  resize: vertical; /* Allow vertical resizing of the textarea */
+}
+
+#teksti{
+  margin-left: 50px;
+}
