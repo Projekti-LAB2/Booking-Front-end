@@ -27,7 +27,7 @@ function Ticket() {
                 ticketNumber: ticket.TicketNumber,
                 price: ticket.Price,
                 startPointId: ticket.StartPointId,
-                startPoint: ticket.StartPoint.DeparatureCityName,
+                startPoint: ticket.StartPoint && ticket.StartPoint.DeparatureCityName ? ticket.StartPoint.DeparatureCityName : '',
                 cityId: ticket.CityId,
                 city: ticket.City.CityName,
                 time: ticket.Time,
@@ -66,17 +66,17 @@ function Ticket() {
         // </div>
         <div>
             <Header />
-            <div class="container  mt-5">
+            <div className="container  mt-5">
 
                 {tickets.map(ticket => (
-                    <div class="row g-3">
-                        {/* <div class="col-12 col-md-6 col-lg-4">
+                    <div className="row g-3">
+                        {/* <div className="col-12 col-md-6 col-lg-4">
 
-                        <div class="card">
+                        <div className="card">
 
-                            <div class="card-body">
-                                <h5 class="card-title"><p>Ticket ID: {ticket.ticketId}</p></h5>
-                                <p class="card-text">
+                            <div className="card-body">
+                                <h5 className="card-title"><p>Ticket ID: {ticket.ticketId}</p></h5>
+                                <p className="card-text">
                                
                                     <p>Ticket Number: {ticket.ticketNumber}</p>
                                     <p>Price: {ticket.price}</p>
@@ -86,7 +86,7 @@ function Ticket() {
                                     <p>Date: {ticket.date}</p>
                                     <br />
                                 </p>
-                                <a href="#" class="btn btn-primary">Blej tiketen</a>
+                                <a href="#" className="btn btn-primary">Blej tiketen</a>
                             </div>
                         </div>
 
@@ -94,23 +94,23 @@ function Ticket() {
 
 
                     
-                        <div class="ticket d-flex flex-row">
-                            <div class="d-flex flex-row card border-lightblue text-center">
-                                <div class="card-body ">
-                                    <h5 class="card-title ticket-info">
-                                        {/* <i class="bi bi-arrow-right-circle-fill text-primary"></i> */}
+                        <div className="ticket d-flex flex-row">
+                            <div className="d-flex flex-row card border-lightblue text-center">
+                                <div className="card-body ">
+                                    <h5 className="card-title ticket-info">
+                                        {/* <i className="bi bi-arrow-right-circle-fill text-primary"></i> */}
                                         {ticket.startPoint}<large>&rarr;</large>{ticket.city}
                                     </h5>
-                                    <h5 class="card-title ticket-info">
-                                        {/* <i class="bi bi-arrow-right-circle-fill text-primary"></i> */}
+                                    <h5 className="card-title ticket-info">
+                                        {/* <i className="bi bi-arrow-right-circle-fill text-primary"></i> */}
                                        <h2> {ticket.time}<large>&rarr;</large>04:00</h2>
                                     </h5>
                                     <span><h3>Nisja behet me date :{ticket.date}</h3></span>
-                                    <p class="card-text">
-                                          <span class="text-primary ticket-info ticket-price"><em>Just {ticket.price} Euro</em></span>
+                                    <p className="card-text">
+                                          <span className="text-primary ticket-info ticket-price"><em>Just {ticket.price} Euro</em></span>
                                     </p>
                                    
-                                    <p class="card-text">
+                                    <p className="card-text">
                                         <button>Bye now</button>
                                     </p>
                                 </div>
