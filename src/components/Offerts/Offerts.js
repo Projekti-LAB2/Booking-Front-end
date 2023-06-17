@@ -103,7 +103,7 @@ const Offers = (props) => {
                 contentLabel="Modal"
             >
                 <div className="modal-title-div">
-                    <h2 className="modal-title">Oferta: {modalOffer.OfferName}</h2>
+                    <h2 className="modal-title">Oferta: {modalOffer ? modalOffer.OfferName : ''}</h2>
                 </div>
                 <form className="modal-form">
                     <div className="form-group">
