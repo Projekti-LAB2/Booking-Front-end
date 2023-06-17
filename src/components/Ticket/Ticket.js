@@ -11,13 +11,12 @@ function Ticket() {
         fetch('https://localhost:5001/api/Ticket')
             .then(response => response.json())
             .then(data => {
+                console.log(data)
                 const flattenedTickets = flattenTickets(data);
                 setTickets(flattenedTickets);
             })
             .catch(error => console.log(error));
     }, []);
- 
-
 
     const flattenTickets = data => {
         const flattenedTickets = [];
@@ -28,7 +27,7 @@ function Ticket() {
                 ticketNumber: ticket.TicketNumber,
                 price: ticket.Price,
                 startPointId: ticket.StartPointId,
-                startPoint: ticket.StartPoint.DeparatureCityName,
+                startPoint: ticket.StartPoint && ticket.StartPoint.DeparatureCityName ? ticket.StartPoint.DeparatureCityName : '',
                 cityId: ticket.CityId,
                 city: ticket.City.CityName,
                 time: ticket.Time,
@@ -46,6 +45,20 @@ function Ticket() {
 
         return flattenedTickets;
     };
+            // Sorts the tickets by price from highest to lowest
+            const sortByPriceDescending = () => {
+                const sortedTickets = [...tickets];
+                sortedTickets.sort((a, b) => b.price - a.price);
+                setTickets(sortedTickets);
+            };
+    
+            // Sorts the tickets by price from lowest to highest
+            const sortByPriceAscending = () => {
+                const sortedTickets = [...tickets];
+                sortedTickets.sort((a, b) => a.price - b.price);
+                setTickets(sortedTickets);
+            };
+    
     const form=useRef();
     const sendEmail = (e) => {
         e.preventDefault();
@@ -60,31 +73,32 @@ function Ticket() {
       };
 
     return (
-
-        <div>
+ <div>
             <Header />
+            <div className="container mt-5">
+            <div className='sort-buttons'>
+                <button onClick={sortByPriceDescending}>Expensive Tickets</button>
+                <button onClick={sortByPriceAscending}>Cheap Tickets</button>
+            </div>
             <form ref={form} onSubmit={sendEmail}>
-            <div class="container  mt-5">
+           
 
                 {tickets.map(ticket => (
-                    <div class="row g-3">
-
-
-                  
-                        <div class="ticket d-flex flex-row">
-                            <div class="d-flex flex-row card border-lightblue text-center">
-                                <div class="card-body ">
-                                    <h5 class="card-title ticket-info">
-                                        {/* <i class="bi bi-arrow-right-circle-fill text-primary"></i> */}
+                    <div className="row g-3">
+                        <div className="ticket d-flex flex-row">
+                            <div className="d-flex flex-row card border-lightblue text-center">
+                                <div className="card-body">
+                                    <h5 className="card-title ticket-info">
                                         {ticket.startPoint}<large>&rarr;</large>{ticket.city}
                                     </h5>
-                                    <h5 class="card-title ticket-info">
-                                        {/* <i class="bi bi-arrow-right-circle-fill text-primary"></i> */}
-                                       <h2> {ticket.time}<large>&rarr;</large>04:00</h2>
+                                    <h5 className="card-title ticket-info">
+                                        <h2>{ticket.time}<large>&rarr;</large>04:00</h2>
                                     </h5>
-                                    <span><h3>Nisja behet me date :{ticket.date}</h3></span>
-                                    <p class="card-text">
-                                          <span class="text-primary ticket-info ticket-price"><em>Just {ticket.price} Euro</em></span>
+                                    <span><h3>Nisja behet me date: {ticket.date}</h3></span>
+                                    <p className="card-text">
+                                        <span className="text-primary ticket-info ticket-price">
+                                            <em>Just {ticket.price} Euro</em>
+                                        </span>
                                     </p>
                                    
                                     <p class="card-text">
@@ -96,17 +110,15 @@ function Ticket() {
                                 </div>
                             </div>
                         </div>
-
-
-                      </div>
-                   
+                    </div>
                 ))}
-               
+               </form>
             </div>
-            </form>
+            
         </div>
        
     );
 }
 
 export default Ticket;
+

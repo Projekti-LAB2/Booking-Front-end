@@ -32,3 +32,10 @@
   .ticket-price {
     text-decoration: underline;
   }
+
+  .sort-buttons {
+    width: 100%;
+    margin-left: 700px;
+    margin-bottom: 50px;
+    margin-top: -30px;
+  }
