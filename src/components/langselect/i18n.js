@@ -24,7 +24,8 @@ i18n.use(initReactI18next).init({
           Returning:'Kthimi',
           Search:'Kerko Bileten',
           Trending:'DESTINACIONET TREND 2023',
-          Most:'Zgjedhjet më të njohura për udhëtarët nga Kosova'
+          Most:'Zgjedhjet më të njohura për udhëtarët nga Kosova',
+          Traveldes:'Travel.com është pjesë e Booking Holdings Inc., lider botëror në udhëtimet në internet dhe shërbime të ngjashme'
         },
       },
     en: {
@@ -43,7 +44,8 @@ i18n.use(initReactI18next).init({
         Returning:'Returning',
         Search:'Search For Tickets',
         Trending:'TRENDING DESTINATIONS 2023',
-        Most:'Most popular choices for travelers from Kosovo'
+        Most:'Most popular choices for travelers from Kosovo',
+        Traveldes:'Travel.com is part of Booking Holdings Inc., the world leader in online travel and related service'
       },
     },
   },

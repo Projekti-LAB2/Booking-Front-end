@@ -1,8 +1,7 @@
 .containerdiv{
     background-color:#f1f1f1;
     width: 100%;
-    height: auto;
-    margin-top: -1.8rem;
+    height: 35rem;
 }
 
 .photodiv{
@@ -19,19 +18,17 @@
 
 .textdiv{
     color: black;
-    margin-left: 24rem;
+    margin-left: 25rem;
 }
 .textdiv h2{
-    font-size: 2rem;
     padding-top: 10px;
     font-family: inherit;
 }
 
 .textdiv p{
-    font-size: 1.2rem;
-    color: black;
+    color: #333;
     font-family: initial;
-    margin-left: 2rem;
+    margin-left: 3.5rem;
 }
 
 .secondphotos{
@@ -65,36 +62,36 @@
     width: 2rem;  
       height: 1rem;
     position: relative;
-   left: 9.3rem;
-   bottom: 2.7rem; 
+   left: 12rem;
+
 
 }
 .allpng img{
     width: 2rem;  
     height: 1rem;
   position: relative;
- left: 7rem;
- bottom: 2.7rem; 
+ left: 9rem;
+
 
 }
 .ullpng img{
     width: 2rem;  
     height: 1rem;
   position: relative;
- left: 6.3rem;
- bottom: 2.7rem; 
+ left: 8.5rem;
+ bottom: 0.3rem; 
 }
 .trrpng img{
     width: 2rem;  
     height: 1rem;
   position: relative;
- left: 7rem;
- bottom: 2.7rem; 
+ left: 9rem;
+ bottom: 0.3rem; 
 }
 .eggpng img{
     width: 2rem;  
     height: 1rem;
   position: relative;
- left:6rem;
- bottom: 2.7rem; 
+ left: 7.6rem;
+ bottom: 0.3rem; 
 }
