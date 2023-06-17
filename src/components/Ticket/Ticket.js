@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
+import React, { useRef } from 'react';
 import egpng from '../../assets/1200px-Flag_of_Egypt_(variant).png';
 import Header from '../Header';
 import './Ticket.css'
-
+import emailjs from '@emailjs/browser';
 function Ticket() {
     const [tickets, setTickets] = useState([]);
 
@@ -45,55 +46,31 @@ function Ticket() {
 
         return flattenedTickets;
     };
- 
+    const form=useRef();
+    const sendEmail = (e) => {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_hstoink', 'template_57xybph', form.current, 'JvQKht5KA-jBnxr1y')
+          .then((result) => {
+              console.log(result.text);
+              alert("Rezervimi i tiketes u krye me sukses !Shikoni email per me shume info.")
+          }, (error) => {
+              console.log(error.text);
+          });
+      };
 
     return (
-        // <div>
-        //   <h2>Ticket List</h2>
-        //   <ul>
-        //     {tickets.map(ticket => (
-        //       <li key={ticket.ticketId}>
-        //         <p>Ticket ID: {ticket.ticketId}</p>
-        //         <p>Ticket Number: {ticket.ticketNumber}</p>
-        //         <p>Price: {ticket.price}</p>
-        //         <p>Start Point: {ticket.startPoint}</p>
-        //         <p>City: {ticket.city}</p>
-        //         <p>Time: {ticket.time}</p>
-        //         <p>Date: {ticket.date}</p>
-        //       </li>
-        //     ))}
-        //   </ul>
-        // </div>
+
         <div>
             <Header />
+            <form ref={form} onSubmit={sendEmail}>
             <div class="container  mt-5">
 
                 {tickets.map(ticket => (
                     <div class="row g-3">
-                        {/* <div class="col-12 col-md-6 col-lg-4">
-
-                        <div class="card">
-
-                            <div class="card-body">
-                                <h5 class="card-title"><p>Ticket ID: {ticket.ticketId}</p></h5>
-                                <p class="card-text">
-                               
-                                    <p>Ticket Number: {ticket.ticketNumber}</p>
-                                    <p>Price: {ticket.price}</p>
-                                    <p>Start Point: {ticket.startPoint}</p>
-                                    <p>City: {ticket.city}</p>
-                                    <p>Time: {ticket.time}</p>
-                                    <p>Date: {ticket.date}</p>
-                                    <br />
-                                </p>
-                                <a href="#" class="btn btn-primary">Blej tiketen</a>
-                            </div>
-                        </div>
-
-                    </div> */}
 
 
-                    
+                  
                         <div class="ticket d-flex flex-row">
                             <div class="d-flex flex-row card border-lightblue text-center">
                                 <div class="card-body ">
@@ -111,7 +88,10 @@ function Ticket() {
                                     </p>
                                    
                                     <p class="card-text">
-                                        <button>Bye now</button>
+                                     
+                                        <button type="submit" >Bye now</button>
+                                       
+                                        
                                     </p>
                                 </div>
                             </div>
@@ -121,9 +101,11 @@ function Ticket() {
                       </div>
                    
                 ))}
-
+               
             </div>
+            </form>
         </div>
+       
     );
 }
 
