@@ -1,7 +1,7 @@
 
 
 /* Styles for the form */
-form {
+.contactForm {
   width: 600px;
   margin: 0 auto;
   font-family: Arial, sans-serif;
@@ -13,7 +13,7 @@ form {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   justify-content: left;
 }
-label {
+.labelContact {
   display: block;
   margin-bottom: 10px;
   font-weight: bold;
@@ -21,7 +21,7 @@ label {
 
 input[type="text"],
 input[type="email"],
-textarea {
+.textareaa {
   width: 400px;
   padding: 8px;
   font-size: 16px;
@@ -30,12 +30,12 @@ textarea {
   justify-content: center;
 }
 
-textarea {
+.textareaa {
   height: 100px;
   resize: vertical; /* Allow vertical resizing of the textarea */
 }
 
-button[type="submit"] {
+.buttonContact {
   width: 100px;
   padding: 10px 20px;
   font-size: 16px;
@@ -48,7 +48,7 @@ button[type="submit"] {
   margin-left: 220px;
 }
 
-button[type="submit"]:hover {
+.buttonContact:hover {
   background-color: #45a049;
 }
 

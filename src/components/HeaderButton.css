@@ -1,4 +1,4 @@
-.list {
+.listHeader {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -8,7 +8,7 @@
   
   }
   
-  ul {
+  .ulHeader {
     font-size: 1.1rem;
     list-style-type: none;
     margin: 0;
@@ -17,10 +17,23 @@
     align-items: center;
   }
   
-  li {
+  .liHeader {
     margin-right: 10px;
   }
   
+ 
+  
+  .buttonHeader {
+    padding: 0.7rem 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 0.5rem;
+    
+  }
   a {
     text-decoration: none;
     color: #333;
@@ -33,34 +46,22 @@
     background-color: #ccc;
   }
   
-  button {
-    padding: 0.7rem 1rem;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-left: 0.5rem;
-    
-  }
-  
-  button:hover {
+  .buttonHeader:hover {
     background-color: #555;
   }
   
 
   @media (max-width: 600px) {
-    .list {
+    .listHeader {
       flex-direction: column;
       padding: 20px;
     }
   
-    ul {
+    .ulHeader {
       margin-bottom: 10px;
     }
   
-    button {
+    .buttonHeader {
       margin-top: 10px;
     }
   }

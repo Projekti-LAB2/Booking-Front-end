@@ -81,10 +81,10 @@ const Offers = (props) => {
             <div className="search-bar">
             <input  type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="Search by description"/>
 </div>
-            <div className="Sort-buttons">
+            <div >
             
-            <button onClick={sortByPriceDescending}>Expensive Offers</button>
-            <button onClick={sortByPriceAscending}>Cheap Offers</button>
+            <button className="sort-buttons" onClick={sortByPriceDescending}>Expensive Offers</button>
+            <button className="sort-buttons" onClick={sortByPriceAscending}>Cheap Offers</button>
             </div>
             </div>
             {offers.filter((offer) => offer.OfferDescription.toLowerCase().includes(searchTerm.toLowerCase()))

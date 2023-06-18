@@ -72,3 +72,17 @@
   .search-bar{
     margin-right: 300px;
   }
+  .sort-buttons{
+    padding: 0.7rem 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 0.5rem;
+    
+}
+.sort-buttons:hover{
+    background-color: #555;
+}

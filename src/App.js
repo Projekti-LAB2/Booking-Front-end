@@ -9,6 +9,8 @@ import PostTicket from './components/Ticket/PostTicket';
 import PostContact from './components/ContactForm/PostContact';
 import Ticket from './components/Ticket/Ticket';
 import Footer from './components/Footer/Footer';
+import BookingTicket from './components/Ticket/BookingTicket';
+
 
 function Home(){
   return(
@@ -37,6 +39,8 @@ function App() {
           <Route path='/' element={<TrendingDes/>}/>
           <Route path='/contactus' element={<PostContact/>}/>
           <Route path='/ticket' element={<Ticket/>}/>
+          <Route path='/bookingTicket' element={<BookingTicket/>}/>
+   
           {/* <Route path='/postticket' element={<PostTicket/>}/> */}
         </Routes>
 

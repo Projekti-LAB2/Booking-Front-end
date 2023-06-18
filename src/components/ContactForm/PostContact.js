@@ -52,27 +52,29 @@ const PostContact = () => {
     <div className='title'>
       <h2>Contact Us </h2>
     </div>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='contactForm'>
       <div className='Border'>
-      <label>
+ 
+      <label className='labelContact'>
+      
         Name:
         <input type="text" id="teksti" name="Name" value={contactformData.Name} onChange={handleInputChange} />
       </label>
       <br />
-      <label>
+      <label className='labelContact'>
         Email:
         <input type="text" id="teksti" name="Email" value={contactformData.Email} onChange={handleInputChange} />
       </label>
 
 
       <br />
-      <label>
+      <label className='labelContact'>
         Message:
         <input type="text"  id="message" name="Message" value={contactformData.Time} onChange={handleInputChange} />
       </label>
  
       <br />
-      <button type="submit">Submit</button>
+      <button className='buttonContact' type="submit">Submit</button>
       </div>
     </form>
     </div>
