@@ -4,9 +4,9 @@ import Header from '../Header';
 const PostContact = () => {
 
   const [contactformData, setContactFormData] = useState({
-    Name: '',
-    Message: '',
-    Email: ''
+    name: '',
+    email: '',
+    message: ''
 
   });
 
@@ -24,7 +24,7 @@ const PostContact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://localhost:5001/api/ContactForm', {
+      const response = await fetch('http://localhost:4000/api/create-contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -58,19 +58,19 @@ const PostContact = () => {
       <label className='labelContact'>
       
         Name:
-        <input type="text" id="teksti" name="Name" value={contactformData.Name} onChange={handleInputChange} />
+        <input type="text" id="teksti" name="name" value={contactformData.name} onChange={handleInputChange} />
       </label>
       <br />
       <label className='labelContact'>
         Email:
-        <input type="text" id="teksti" name="Email" value={contactformData.Email} onChange={handleInputChange} />
+        <input type="text" id="teksti" name="email" value={contactformData.email} onChange={handleInputChange} />
       </label>
 
 
       <br />
       <label className='labelContact'>
         Message:
-        <input type="text"  id="message" name="Message" value={contactformData.Time} onChange={handleInputChange} />
+        <input type="text"  id="message" name="message" value={contactformData.message} onChange={handleInputChange} />
       </label>
  
       <br />
