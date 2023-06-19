@@ -2,7 +2,7 @@
     width: 70rem;
     height: 20rem;
     background-image: url('../../assets/1920_dubai-2.jpg');
-    
+    margin-left: 7%;
     border-radius: 250px;
     margin-top: 5%;
 }
@@ -43,3 +43,70 @@
 .sort-buttons:hover{
     background-color: #555;
 }
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .search-bar{
+    margin-right: 300px;
+  }
+  .modal-contenti {
+   
+    background-image:url('.././../assets/1920_dubai-2.jpg');
+    opacity: 4;
+ 
+  }
+  
+  .modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  .modal-title-divi {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+   
+  }
+  
+  .modal-titlee {
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+  
+  .modal-forma .form-groupi {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 35%;
+  }
+  
+  .modal-forma label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+   color: #25a1b4;
+  }
+  
+  .inputi {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .modal-forma button {
+    padding: 10px 100px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 6%;
+   
+  }

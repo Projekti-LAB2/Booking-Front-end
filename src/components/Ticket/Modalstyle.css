@@ -1,0 +1,54 @@
+.modal-content {
+   
+    background-image:url('.././../assets/photo-1501785888041-af3ef285b470.jpg');
+    opacity: 0.8;
+ 
+  }
+  
+  .modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  .modal-title-div {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .modal-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .modal-form .form-group {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 35%;
+  }
+  
+  .modal-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .modal-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .modal-form button {
+    padding: 10px 100px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 6%;
+   
+  }

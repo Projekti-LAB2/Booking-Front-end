@@ -7,6 +7,7 @@ import Modal from 'react-modal';
 import emailjs from '@emailjs/browser';
 
 
+
 function Ticket() {
     const [tickets, setTickets] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
@@ -15,17 +16,18 @@ function Ticket() {
     const openModal = (ticket) => {
         // Set the offer as a property in the component state
         setModalTicket(ticket);
-      
+
+
         // Open the modal
         setModalIsOpen(true);
-      };
+    };
 
     const closeModal = () => {
         setModalIsOpen(false);
     };
     const handleFormSubmit = async (event) => {
         event.preventDefault(); // Prevent the default form submission behavior
-      
+
         // Get the form data
         const formData = {
             Name: document.getElementById('firstName').value,
@@ -33,19 +35,20 @@ function Ticket() {
             Email: document.getElementById('email').value,
             IdentityNumber: document.getElementById('identityNumber').value,
             Phone: document.getElementById('phone').value,
-            TicketId: modalTicket.TicketId
+            TicketId: modalTicket.ticketId
         };
-      
+
         try {
-          const response = await axios.post('https://localhost:5001/api/bookingticket', formData);
-      
-          // Handle the response
-          console.log(response.data); // You can do something with the response data
+            const response = await axios.post('https://localhost:5001/api/bookingticket', formData);
+
+            // Handle the response
+            console.log(response.data); // You can do something with the response data
+            sendEmail(event);
         } catch (error) {
-          // Handle the error
-          console.error(error);
+            // Handle the error
+            console.error(error);
         }
-      };
+    };
 
 
 
@@ -118,66 +121,73 @@ function Ticket() {
     return (
         <div>
             <Header />
+            <div className='navbar'>
+                <div className='search-bar'>
+                    <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="Search by City you want to go" />
+                </div>
+                <div>
+                <button className='sort-buttons' onClick={sortByPriceDescending}>Expensive Tickets</button>
+                <button onClick={sortByPriceAscending} className='sort-buttons'>Cheap Tickets</button>
+                </div>
+
+            </div>
             <div className="container mt-5 d-flex justify-content-center flex-column ">
-            <input  type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="Search by description"/>
-                <div >
-                    <button className='sort-buttons' onClick={sortByPriceDescending}>Expensive Tickets</button>
-                    <button onClick={sortByPriceAscending} className='sort-buttons'>Cheap Tickets</button>
-                </div>
                 {tickets.filter((ticket) => ticket.city.toLowerCase().includes(searchTerm.toLowerCase()))
-                .map(ticket => (
-                    <div className='ticket' key={ticket.TicketId}>
-                        <form ref={form} onSubmit={sendEmail} className='ticketForm'>
+                    .map(ticket => (
+                        <div className='ticket' key={ticket.TicketId}>
+                            <div className='ticketForm'>
 
-                            <h2 className='fontih'>Udheto nga {ticket.startPoint}<large>&rarr;</large>{ticket.city}</h2>
-                            <p className='fontip1 font-italic'>Perfito nga zbritja e madhe dhe paguaj vetem {ticket.price} Euro</p>
-                            <p className='fonti font-italic'>Udhetimi do te filloj me date {ticket.date} ne ora {ticket.time}</p>
-                            
-                                <button href='#' className='ticketButton btn btn-primary' type="submit" onClick={() => openModal(ticket)}>Book Now</button>
-                            
+                                <h2 className='fontih'>Udheto nga {ticket.startPoint}<large>&rarr;</large>{ticket.city}</h2>
+                                <p className='fontip1 font-italic'>Perfito nga zbritja e madhe dhe paguaj vetem {ticket.price} Euro</p>
+                                <p className='fonti font-italic'>Udhetimi do te filloj me date {ticket.date} ne ora {ticket.time}</p>
 
+                                <button href='#' className='ticketButton btn btn-primary' onClick={() => openModal(ticket)}>Book Now</button>
 
 
 
-                        </form>
 
 
-                    </div>
-                ))}
+                            </div>
+
+
+                        </div>
+                    ))}
                 <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
-                contentLabel="Modal"
-            >
-                <div className="modal-title-div">
-                    <h2 className="modal-title">Tiketa: {modalTicket ? modalTicket.TicketNumber : ''}</h2>
-                </div>
-                <form className="modal-form" >
-                    <div className="form-group">
-                        <label htmlFor="firstName">Emri:</label>
-                        <input type="text" id="firstName" name="firstName" className="form-control" />
+                    isOpen={modalIsOpen}
+                    onRequestClose={closeModal}
+                    contentLabel="Modal"
+                >
+                    <div className='modal-contenti'>
+                    <div className="modal-title-divi">
+                        <h2 className="modal-titlee">Udheto ne : {modalTicket ? modalTicket.city : ''}</h2>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="lastName">Mbiemri:</label>
-                        <input type="text" id="lastName" name="lastName" className="form-control" />
+                    <form className="modal-forma" ref={form} onSubmit={sendEmail} >
+                        <div className="form-groupi">
+                            <label htmlFor="firstName">Emri:</label>
+                            <input type="text" id="firstName" name="firstName" className="form-control" />
+                        </div>
+                        <div className="form-groupi">
+                            <label htmlFor="lastName">Mbiemri:</label>
+                            <input type="text" id="lastName" name="lastName" className="form-control" />
+                        </div>
+                        <div className="form-groupi">
+                            <label htmlFor="email">Email-i:</label>
+                            <input type="email" id="email" name="email" className="form-control" />
+                        </div>
+                        <div className="form-groupi">
+                            <label htmlFor="identityNumber">Numri Personal:</label>
+                            <input type="text" id="identityNumber" name="identityNumber" className="form-control" />
+                        </div>
+                        <div className="form-groupi">
+                            <label htmlFor="phone">Nr. Tel:</label>
+                            <input type="text" id="phone" name="phone" className="form-control" />
+                        </div>
+                        <div className="form-groupi">
+                            <button type="submit" className="btn btn-primary" onClick={handleFormSubmit}>Rezervo</button>
+                        </div>
+                    </form>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="email">Email-i:</label>
-                        <input type="email" id="email" name="email" className="form-control" />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="identityNumber">Numri Personal:</label>
-                        <input type="text" id="identityNumber" name="identityNumber" className="form-control" />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="phone">Nr. Tel:</label>
-                        <input type="text" id="phone" name="phone" className="form-control" />
-                    </div>
-                    <div className="form-group">
-                        <button type="submit" className="btn btn-primary" onClick={handleFormSubmit}>Rezervo</button>
-                    </div>
-                </form>
-            </Modal>
+                </Modal>
 
             </div>
 

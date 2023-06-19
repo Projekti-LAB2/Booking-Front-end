@@ -79,8 +79,8 @@ const Form = (props) => {
           <label className='formLabeli'>{t('Returning')}</label>
           <input className='inputdatee' type="date" name="returning" id="returning"/>
         </div>
-        <div className={classes.buttonDiv}>
-          <button className='buttoni' onClick={handleSearch}>{t('Search')}</button>
+        <div className='buttonDivi'>
+        <button className='buttoni' onClick={handleSearch}>{t('Search')}</button>
         </div>
       </form>
     </div>
